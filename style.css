@@ -1,21 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;700&display=swap');
+
 * {
   padding: 0;
   margin: 0;
-  border: 0;
-  box-sizing: border-box
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-.home {
+:root {
+  --color-primary: #FFF;
+  --color-back: #000;
+}
+
+body {
+  background: var(--color-back);
+  min-height: 200vh;
+}
+
+.container {
+  width: 85.6vw;
+  margin: auto;
+}
+
+/*===header===*/
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.6s;
+  padding: 40px 100px;
+  z-index: 100000;
+  ;
+}
+
+header.sticky {
+  padding: 5px 100px;
+  background: var(--color-primary);
+}
+
+header .logo {
+  position: relative;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 2em;
+  letter-spacing: 2px;
+  transition: 0.6s;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  position: relative;
+  list-style: none;
+}
+
+header ul li a {
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--color-primary);
+  letter-spacing: 2px;
+  font-size: 24px;
+  transition: 0.6s;
+}
+
+.intro {
+  position: sticky;
   width: 100%;
   height: 100vh;
-
-  background: url(assets/melanie-leduc-nhlfPOVcMTw-unsplash.jpg) no-repeat center;
+  background: url(assets/background-intro.jpg);
   background-size: cover;
 }
 
-.logoCentral img {
-  max-width: 400px;
-  max-height: 300px;
-  width: auto;
+header.sticky .logo,
+header.sticky ul li a {
+  color: var(--color-back);
+}
+
+#starter {
+  font-weight: 200;
+}
+
+/*===INTRO===*/
+
+.content-intro {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-intro img {
   height: auto;
+  width: auto;
+  max-width: 60vh;
+  max-height: 60vw;
+
+  margin: 25vh auto 0;
+  display: block;
+}
+
+.text p {
+  text-align: center;
+  margin: 5vh auto;
+  color: var(--color-primary);
+  font-size: 3vw;
+}
+
+/*===BOTÃO===*/
+.button {
+  margin: auto;
+}
+
+.orcamento {
+  font-size: 1.4vw;
+  font-weight: 700;
+  text-decoration: none;
+
+  display: inline-block;
+  color: var(--color-primary);
+  padding: 16px 64px;
+  border: var(--color-primary) 6px solid;
+  border-radius: 16px;
+
+  box-shadow: inset 0 0 14px 0 var(--color-primary), 0 0 14px 0 var(--color-primary);
+  text-shadow: 0 0 8px hsl(0 0% 100% / 0.3), 0 0 32px currentColor;
+
+  position: relative;
+}
+
+/*===REFLEXO DO BOTÃO===*/
+.orcamento::before {
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+
+  background: var(--color-primary);
+
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(64px) rotateX(40deg) scale(1, 0.35);
+  filter: blur(64px);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/*===ESTILOS DE HOVER P/ BOTÃO===*/
+.orcamento::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 128px 32px var(--color-primary);
+  opacity: 0;
+  background-color: var(--color-primary);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.orcamento:hover::before,
+.orcamento:hover::after {
+  opacity: 1;
+}
+
+.orcamento:hover {
+  color: var(--color-back);
+  text-shadow: none;
 }

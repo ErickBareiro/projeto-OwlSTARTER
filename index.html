@@ -7,20 +7,41 @@
   <link rel="stylesheet" href="style.css">
 
   <title>OWL STARTER</title>
-</head>
 
+</head>
 
 <body>
 
   <header>
-
+    <a href="#" id="starter"class="logo"><b>OLW</b> STARTER</a>
+    <ul>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Serviços</a></li>
+      <li><a href="#">Portfólio</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
   </header>
 
-  <section class="home">
-    <div class="logoCentral">
-    <img src="assets/OWL-STARTER.png" alt="Logo OWL">
+  <section class="intro">
+    <div class="container">
+      <div class="content-intro">
+        <img src="assets/owlStarter-logo.png" alt="Logo da Owl Starter">
+        <div class="text">
+          <p>Modernize-se</p>
+        </div>
+        <div class="button">
+          <a href="#" class="orcamento">COMEÇAR</a>
+        </div>
+      </div>
     </div>
   </section>
+
+  <script type="text/javascript">
+    window.addEventListener("scroll", function() {
+      var header = document.querySelector("header");
+      header.classList.toggle("sticky", window.scrollY > 0);
+    })
+  </script>
   
 </body>
 
