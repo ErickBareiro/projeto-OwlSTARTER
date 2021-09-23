@@ -118,6 +118,10 @@ header.sticky ul li a {
   font-weight: 300;
 }
 
+.loader img {
+  margin: 0 auto;
+}
+
 /*
 BOTÃO
 .button {
@@ -462,6 +466,12 @@ ESTILOS DE HOVER P/ BOTÃO
   .text p {
     font-size: 7vw;
   }
+
+  /*==INTRO===*/
+  .loader img {
+    margin: 0 auto;
+  }
+
 
   /*===CONTATO===*/
 
